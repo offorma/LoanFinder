@@ -3,7 +3,11 @@ package com.zopa.loanfinder;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
-
+/**
+ * This class represents a quote shown to the customer
+ * @author Nonso
+ * @version 0.1
+ */
 public class Quote {
 
     private BigInteger requestedAmount;

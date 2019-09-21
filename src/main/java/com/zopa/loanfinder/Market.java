@@ -2,9 +2,13 @@ package com.zopa.loanfinder;
 
 import java.util.Comparator;
 import java.util.LinkedList;
+/**
+ * This class represents the market
+ * @author Nonso
+ * @version 0.1
+ */
+public class Market {
 
-public class Lenders {
-    //use queue for lender  Comparator.comparing(com.zopa.loanfinder.Lender::getPercentage).thenComparing(com.zopa.loanfinder.Lender::getAmount)
     private static LinkedList<Lender> allLenders = new LinkedList<>();
 
 
@@ -17,11 +21,11 @@ public class Lenders {
     }
 
     public static void setAllLenders(LinkedList<Lender> allLenders) {
-        Lenders.allLenders = allLenders;
+        Market.allLenders = allLenders;
     }
 
     public static LinkedList<Lender> sortByPercentage() {
-        Lenders.getAllLenders().sort(Comparator.comparingDouble(Lender::getPercentage));
-        return Lenders.getAllLenders();
+        Market.getAllLenders().sort(Comparator.comparingDouble(Lender::getPercentage));
+        return Market.getAllLenders();
     }
 }

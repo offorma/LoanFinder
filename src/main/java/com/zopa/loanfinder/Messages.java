@@ -1,5 +1,9 @@
 package com.zopa.loanfinder;
-
+/**
+ * A helper class to print messages
+ * @author Nonso
+ * @version 0.1
+ */
 public class Messages {
 
 

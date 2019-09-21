@@ -3,6 +3,7 @@ package com.zopa.loanfinder;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.util.LinkedList;
@@ -26,16 +27,26 @@ public class BusinessTest {
         allLenders.add(new Lender("Angela", 0.071, "60"));
         validBus = new Business(new BigInteger("1000"),36,12);
         invalidBus = new Business(new BigInteger("1050"),36,12);
+        Quote quote = new Quote();
+        quote.setAnnualInterest(7.0);
+        quote.setMonthlyRepayment(new BigDecimal("30.88"));
+        quote.setTotalrepayment(new BigDecimal("1111.58"));
+        quote.setRequestedAmount(new BigInteger("1000"));
     }
 
     @Test
     public void TestTotalAmountDue(){
-        Lenders.setAllLenders(allLenders);
+        Market.setAllLenders(allLenders);
         assertEquals("Assert that total Amount is correct","1111.58", validBus.totalAmountDue().setScale(2, RoundingMode.CEILING).toString());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void TestTotalAmountDueError(){
+        invalidBus.totalAmountDue();
+
+    }
+    @Test
+    public void TestGetQuote(){
         invalidBus.totalAmountDue();
 
     }

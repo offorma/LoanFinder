@@ -1,17 +1,17 @@
 package com.zopa.loanfinder;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.math.BigInteger;
 
+/**
+ * This class represents a instace of a lender in the market
+ * @author Nonso
+ * @version 0.1
+ */
 public class Lender {
 
     private String name;
     private double percentage;
     private String amount;
-
-    private Logger log = LoggerFactory.getLogger(Lender.class);
 
     public Lender() {
     }
@@ -39,13 +39,7 @@ public class Lender {
     }
 
     public BigInteger getAmount() {
-        BigInteger number = BigInteger.ZERO;
-        try {
-           number = new BigInteger(this.amount);
-        }catch (NumberFormatException e){
-            log.error("Could not convert String ammount into BigInterger", e);
-        }
-        return number;
+        return new BigInteger(this.amount);
     }
 
     public void setAmount(String amount) {

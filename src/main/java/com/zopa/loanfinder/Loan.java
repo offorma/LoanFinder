@@ -1,13 +1,17 @@
 package com.zopa.loanfinder;
 
 import java.math.BigInteger;
-
-public class Pair {
+/**
+ * This class represents the valid loans from the market
+ * @author Nonso
+ * @version 0.1
+ */
+public class Loan {
 
     private double interestRate;
     private BigInteger amount;
 
-    public Pair(double interestRate, BigInteger amount) {
+    public Loan(double interestRate, BigInteger amount) {
         this.interestRate = interestRate;
         this.amount = amount;
     }
@@ -30,7 +34,7 @@ public class Pair {
 
     @Override
     public String toString() {
-        return "com.zopa.loanfinder.Pair{" +
+        return "com.zopa.loanfinder.Loan{" +
                 "interestRate=" + interestRate +
                 ", amount=" + amount +
                 '}';
