@@ -1,5 +1,8 @@
 package com.zopa.loanfinder;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -17,7 +20,7 @@ public class Business {
     private final int numberOfMonthInAYear;
     private final int tenourInMonths;
     private Quote quote = new Quote();
-
+    Logger log = LoggerFactory.getLogger(Business.class);
     /**
      * Creates an Business object with the specified parameters.
      *
@@ -39,7 +42,7 @@ public class Business {
             return Collections.emptyList();
         }
         if (!this.pollHasFunds()) {
-            Messages.displayInsufficentPollFunds();
+            log.info("Market has insufficeint funds");
             return Collections.emptyList();
         }
         Market.sortByPercentage();
