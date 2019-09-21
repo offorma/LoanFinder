@@ -9,5 +9,5 @@ import java.io.IOException;
  */
 public interface IFileParser {
 
-    void parseCsv(String str) throws IOException;
+    void parse(String str) throws IOException;
 }

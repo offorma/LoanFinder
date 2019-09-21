@@ -11,17 +11,17 @@ public class FileParserTest {
 
     @Test(expected = Test.None.class)
     public void testParse() throws IOException {
-        new FileParser().parseCsv(func.apply("csv.csv"));
+        new FileParser().parse(func.apply("csv.csv"));
     }
 
     @Test(expected = NullPointerException.class)
     public void testParseNull() throws IOException {
-        new FileParser().parseCsv(null);
+        new FileParser().parse(null);
     }
 
     @Test(expected = NumberFormatException.class)
     public void testParseNumberFormat() throws IOException {
-        new FileParser().parseCsv(func.apply("invalidcsv.csv"));
+        new FileParser().parse(func.apply("invalidcsv.csv"));
     }
 
 

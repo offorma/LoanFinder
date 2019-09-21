@@ -22,7 +22,7 @@ public class FileParser implements IFileParser {
      * @throws IOException           throws an IOException if file path is invalid.
      * @throws NumberFormatException throws a NumberFormatException percentage and amount are not valid strings.
      */
-    public void parseCsv(final String csvFile) throws IOException, NumberFormatException {
+    public void parse(final String csvFile) throws IOException, NumberFormatException {
         String line;
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             int count = 0;

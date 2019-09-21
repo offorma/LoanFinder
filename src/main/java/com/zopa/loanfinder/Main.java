@@ -15,7 +15,7 @@ public class Main {
         }
             csvFile = args[0];
             loanAmountNeeded = args[1];
-            new FileParser().parseCsv(csvFile);
+            new FileParser().parse(csvFile);
 
         Business bus = new Business(new BigInteger(loanAmountNeeded), 36, 12);
         bus.totalAmountDue();
